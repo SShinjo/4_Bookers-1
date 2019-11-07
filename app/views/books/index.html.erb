@@ -21,6 +21,13 @@
 </table>
 
 <h3>New book</h3>
+
+  <div class="form-error">
+		<% @book.errors.full_messages.each do |message| %>
+			<%= message %><br>
+		<% end %>
+  </div>
+
 <%= form_for(@book) do |f| %>
 <p>Title</p>
 <%= f.text_field :title %>
